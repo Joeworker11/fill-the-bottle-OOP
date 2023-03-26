@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ 
+ .content {
+            margin: 20px;
+        }
+
+        .flagon {
+            width: 200px;
+            height: 300px;
+            border: 5px solid #536d81;
+            position: relative;
+            border-top: 0;
+            border-radius: 5px;
+        }
+
+        .water {
+            background-color: rgba(0, 204, 255, 0.728);
+            width: 100%;
+            height: auto;
+            position: absolute;
+            bottom: 0px;
+            height: 20%;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            transition: height 2s;
+        }
+
+        .select {
+            display: inline-block;
+            width: 170px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            border: 2px solid #417099;
+            border-radius: 3px;
+            background-color: #bbd7ef;
+            padding: 0;
+            position: relative;
+            z-index: 1;
+            top: 0px;
+            overflow: visible;
+        }
+
+        .select span {
+
+            line-height: 18px;
+            display: block;
+            padding: 5px;
+        }
+
+        .select .select-button {
+
+            float: right;
+            display: block;
+            width: auto;
+            background-color: #417099;
+            color: #fff;
+            border-top-right-radius: 0px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .select.open .select-display {
+            border-bottom: 0px solid #8aa6c0;
+        }
+
+        .select .select-display .select-text {
+
+            display: inline-block;
+            width: auto;
+        }
+        .select .select-options{
+            display: none;
+            transition: height 2s;
+            position: absolute;
+            width: 100%;
+            border: 2px solid #417099;
+            border-top: 1px solid #7ea6c9;
+            background-color: #bbd7ef;
+            border-bottom-left-radius: 3px;
+            border-bottom-right-radius: 3px;
+            margin-left: -2px;
+            
+        }
+
+        .select.open .select-options{
+            display: block;
+        }
+
+        .select .select-options span {
+            cursor: pointer;
+        }
+
+        .select .select-options span:hover {
+            background-color: #85b2d8;
+        }
+
+        .select .select-options span.selected {
+            background-color: #5a93ca;
+            color: white;
+        }
+        .cpanel{
+            position: relative;
+            padding: 10px;
+            background-color: #99b6d0;
+            border-radius: 3px;
+            display: block;
+        }
+    
+        .button{
+            background-color: #417099;
+            color: #fff;
+            border-top-right-radius: 0px;
+            font-size: 12px;
+            cursor: pointer;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+            padding: 5px 10px;
+            position: relative;
+            display: inline-block;
+            border-radius: 3px;
+            line-height: 22px;
+        }
+    
+    </style>
+</head>
+
+<body>
+    <div class="cpanel" id="cpanel">
+        <div class="select" id="water-quantity" data-egy="1" data-ketto="2">
+            <div class="select-display">
+                <span class="select-text">Válassz valamit</span>
+                <span class="select-button">▼</span>
+            </div>
+            <div class="select-options">
+                <span data-value="25%">Negyedig</span>
+                <span data-value="50%">Félig</span>
+                <span data-value="75%">Háromnegyedig</span>
+                <span data-value="99%">Teli</span>
+                <span data-value="0%">Öntsd ki</span>
+            </div>
+        </div>
+        <span id="fill" class="button">Tölts</span>
+
+    </div>
+    <div class="content" id="content"></div>
+
+    <script src="refilleroop.js"></script>
+</body>
+
+</html>

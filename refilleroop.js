@@ -2,8 +2,8 @@ class Flagon {
 
     constructor(o) {
         this.select = document.querySelector(o.select);
-        this.display = this.select.querySelector(".select-display");
-        this.options = this.select.querySelector(".select-options");
+        this.display = document.querySelector(".select-display");
+        this.options = document.querySelector(".select-options");
         this.text = this.display.querySelector(".select-text");
         this.selectedItem = o.selectedItem;
         this.option = o.option;
@@ -13,19 +13,19 @@ class Flagon {
         this.waterQuantity = o.waterQuantity;
 
         this.display.onclick = () => {
-            this.select.classList.toggle("open");
+            document.querySelector(".select").classList.toggle("open");
         }
         
-        this.options.querySelectorAll("span").forEach( option => {
+        document.querySelectorAll("span").forEach( option => {
             option.onclick = () => {
-                const selectedItem = options.querySelector(".selected");
+                const selectedItem = options.querySelector(".select .selected");
         
                 if (selectedItem) selectedItem.classList.remove("selected");
         
                 option.classList.add("selected"); 
         
                 this.text.innerHTML = option.innerText; 
-                this.select.classList.remove("open");
+                document.querySelector(".select").classList.remove("open");
             };
         });
 
